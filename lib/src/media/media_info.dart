@@ -32,14 +32,14 @@ class MediaInfo {
   });
 
   MediaInfo.fromJson(Map<String, dynamic> json) {
-    debugPrint("Json is : $json");
+    debugPrint("VideoCompress: Json is : $json");
     path = json['path'];
     title = json['title'];
     author = json['author'];
-    width = json['width'];
-    height = json['height'];
-    orientation = json['orientation'];
-    fileSize = json['fileSize'];
+    width = _toInt(json['width']);
+    height = _toInt(json['height']);
+    orientation = _toInt(json['orientation']);
+    fileSize = _toInt(json['fileSize']);
     duration = double.tryParse('${json['duration']}');
     isCancel = json['isCancel'];
   }
@@ -67,4 +67,16 @@ class MediaInfo {
     return "MediaInfo - width: $width - height $height - orientation $orientation - landscape : $isLandscape";
   }
 
+  int? _toInt(dynamic value) {
+    if (value == null) {
+      return null;
+    }
+    if (value is int) {
+      return value;
+    }
+    if (value is num) {
+      return value.round();
+    }
+    return int.tryParse('$value') ?? double.tryParse('$value')?.round();
+  }
 }
