@@ -1,4 +1,6 @@
 .DS_Store
+.build/
+.swiftpm/
 .atom/
 .idea/
 .idea/*
@@ -35,3 +37,4 @@ GeneratedPluginRegistrant.m
 GeneratedPluginRegistrant.java
 build/
 .flutter-plugins
+!example/ios/Podfile

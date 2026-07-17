@@ -198,8 +198,7 @@ class _CompressPageState extends State<CompressPage> {
             : (await VideoCompress.compressVideoAndroid(
                 path: originFile,
                 output: file.path,
-                width: newWidth.floor(),
-                height: newHeight.floor(),
+                maxSize: maxSize.floor(),
               ))
                 ?.path;
 
