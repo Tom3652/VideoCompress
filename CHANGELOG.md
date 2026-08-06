@@ -1,3 +1,10 @@
+## Unreleased
+
+- Update the Android plugin and example to compile/target SDK 37.
+- Use Java 21/Kotlin JVM 21 bytecode with AGP 9.3 and Gradle 9.5.
+- Remove the legacy Android source-set configuration that is incompatible with AGP 9.
+- Migrate VideoCompress away from the legacy Kotlin Gradle Plugin and require Flutter 3.44+.
+
 ## 3.1.1
 - Fix issue on iOS with files containing whitespaces
 
